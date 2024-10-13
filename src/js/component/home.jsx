@@ -1,19 +1,28 @@
 import React, {useState} from "react";
 
 //include images into your bundle
-import rigoImage from "../../img/rigo-baby.jpg";
+
 
 //create your first component
 const Home = () => { 
 	const [todo, setTodo]= useState("");
 	const [todos, setTodos]= useState([]);
 
+	const pendingItems = todos.length;
+
 	const deleteTodo = (indexToDelete) => {
 		setTodos(todos.filter((_, index) => index !== indexToDelete));
 	}; 
 
 	return (
-		<div className="text-center container mt-5">
+		<div className="container min-vh-100 min-vw-75 m-5">
+			 <fieldset>
+			<legend class="text-center fs-1 text-secondary">todos</legend>
+			<div className="shett-1 bg-light min-vh-100 min-vw-75 shadow-lg p-3 mb-5 bg-body">
+			<div className="shett-2 bg-light min-vh-100 min-vw-75 shadow-lg p-3 mb-5 bg-body">
+			<div className="shett-3 bg-light min-vh-100 min-vw-75 shadow-lg p-3 mb-5 bg-body">
+	
+		<div className="text-center  mt-5 shadow p-3 mb-5 bg-body bodyform">
 
 			<input 
 			className="form-control"  
@@ -33,21 +42,31 @@ const Home = () => {
 			<ul>
 				{todos.length >0
 				?todos.map((task, index)=> (
-					<li key = {index} className= "form-control d-flex justify-content-between align-items-center">{task}
-					<button className="btn btn-danger btn-sm ml-2"
+					<li key = {index} 
+					className= "list-group-item d-flex justify-content-between align-items-center task-item border-bottom">
+						{task}
+					<i 
+					className="fas fa-solid fa-trash trash-icon"   
 					onClick={() => deleteTodo(index)}
 					>
-                     				 				 
-					 x
-					</button>
+					</i>
+                     		 				 
 					
 					</li>
 
 				))
-				: <li> No task added</li>
+				: <li className="form-control text-secondary"> No task added</li>
 				}
 			</ul>
 		</div>
+		</div>
+		</div>
+		</div>
+
+		<h6 className="text-secondary">{`${pendingItems} pending ${pendingItems ===1 ? "item": "items"}`}</h6>
+		</fieldset>
+		</div>
+		
 	);
 };
 
