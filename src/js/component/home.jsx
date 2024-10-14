@@ -17,10 +17,10 @@ const Home = () => {
 	return (
 		<div className="container min-vh-100 min-vw-75 m-5">
 			 <fieldset>
-			<legend class="text-center fs-1 text-secondary">todos</legend>
-			<div className="shett-1 bg-light min-vh-100 min-vw-75 shadow-lg p-3 mb-5 bg-body">
-			<div className="shett-2 bg-light min-vh-100 min-vw-75 shadow-lg p-3 mb-5 bg-body">
-			<div className="shett-3 bg-light min-vh-100 min-vw-75 shadow-lg p-3 mb-5 bg-body">
+			<legend class="text-center  text-secondary text-1">todos</legend>
+			<div className="shett-1 bg-light min-vh-100 min-vw-50 shadow-lg pb-2 mb-2 bg-body">
+			<div className="shett-2 bg-light min-vh-100 min-vw-50 shadow-lg pb-2 mb-2 bg-body">
+			<div className="shett-3 bg-light min-vh-100 min-vw-50 shadow-lg pb-2 mb-2 bg-body">
 	
 		<div className="text-center  mt-5 shadow p-3 mb-5 bg-body bodyform">
 
