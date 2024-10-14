@@ -55,7 +55,7 @@ const Home = () => {
 					</li>
 
 				))
-				: <li className="form-control text-secondary"> No task added</li>
+				: <li className="form-control text-secondary">No task added. Add Task. </li>
 				}
 			</ul>
 		</div>
