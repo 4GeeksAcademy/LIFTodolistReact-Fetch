@@ -24,6 +24,7 @@ const Home = () => {
 	//                                  el compoenete se re-renderice
 	 useEffect(()=>{
 		getTodos();
+		
 	 },[]);
 
 	//Logica de JS
@@ -81,9 +82,8 @@ const Home = () => {
 //Aplica el método Delete para borrar las task.
 	const deleteTodo = (id) => { 
 		
-		const url = "https://playground.4geeks.com/todo/todos/" + id;
-			
-		fetch(url, {
+		 
+			fetch("https://playground.4geeks.com/todo/todos/" + id, {
 
 			method: "DELETE",
 			
@@ -91,12 +91,14 @@ const Home = () => {
 		
 		.then((resp)=>{
 			if (!resp.ok) throw new Error("Error al borrar tarea");
-			return resp.json();
+			
+		// 	//return resp.json(); se comenta línea ya que el programa se quedaba esperando un devolución del Json que no llegaba nunca. 
 			
 
-		})
-		.then((data) => {
-			console.log("Tarea Borrada", data);
+		
+		// //})
+		// //.then((data) => {
+		// 	console.log("Tarea Borrada", data);
 			const updatedTodos = todos.filter((task) => task.id !== id);
 			console.log("Actualizando lista local:", updatedTodos);
 			setTodos(updatedTodos);
